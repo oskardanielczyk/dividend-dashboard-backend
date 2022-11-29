@@ -7,8 +7,11 @@ const transactionSchema = new Schema({
   date: { type: String, require: true },
   name: { type: String, require: true },
   ticker: { type: String, require: true },
+  exchange: { type: String, require: true },
   price: { type: Number, require: true },
   numberOfStocks: { type: Number, require: true },
+  closePrice: { type: Number },
+  dayChange: { type: Number },
 });
 
 module.exports = mongoose.model("Transaction", transactionSchema);

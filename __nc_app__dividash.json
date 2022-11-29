@@ -1,0 +1,80 @@
+{
+  ".gitignore": {
+    "mt": "Mon Nov 07 2022 16:08:34 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/.gitignore"
+  },
+  "controllers/transactions.controller.js": {
+    "mt": "Tue Nov 29 2022 13:26:54 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/controllers/transactions.controller.js"
+  },
+  "controllers/users.controller.js": {
+    "mt": "Tue Nov 29 2022 13:50:53 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/controllers/users.controller.js"
+  },
+  "index.js": {
+    "mt": "Mon Nov 28 2022 22:59:35 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/index.js"
+  },
+  "middleware/check-auth.js": {
+    "mt": "Mon Nov 07 2022 15:24:42 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/middleware/check-auth.js"
+  },
+  "models/http-error.js": {
+    "mt": "Fri Nov 04 2022 20:02:17 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/models/http-error.js"
+  },
+  "models/transaction.js": {
+    "mt": "Tue Nov 29 2022 11:23:50 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/models/transaction.js"
+  },
+  "models/user.js": {
+    "mt": "Mon Nov 07 2022 11:40:07 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/models/user.js"
+  },
+  "nodemon.json": {
+    "mt": "Tue Nov 29 2022 13:24:17 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/nodemon.json"
+  },
+  "package-lock.json": {
+    "mt": "Mon Nov 28 2022 23:30:12 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/package-lock.json"
+  },
+  "package.json": {
+    "mt": "Mon Nov 28 2022 23:30:03 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/package.json"
+  },
+  "routes/transactions.route.js": {
+    "mt": "Tue Nov 29 2022 10:53:56 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/routes/transactions.route.js"
+  },
+  "routes/users.route.js": {
+    "mt": "Mon Nov 07 2022 11:30:39 GMT+0100 (czas środkowoeuropejski standardowy)",
+    "exists": true,
+    "state": 1,
+    "path": "/Users/oskardanielczyk/Desktop/react/dividend-dashboard-backend/routes/users.route.js"
+  }
+}

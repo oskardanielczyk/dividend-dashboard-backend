@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const mongoose = require("mongoose");
+const axios = require("axios");
 
 const HttpError = require("../models/http-error");
 const Transaction = require("../models/transaction");
@@ -28,8 +29,48 @@ const getTransactionsByUserId = async (req, res, next) => {
     filteredTransaction = await Transaction.find({ creator: userId });
   } catch (error) {
     return next(
-      new HttpError("Could not find transaction for provided user id", 500)
+      new HttpError("Could not find transactions for provided user id", 500)
     );
+  }
+
+  const map = new Map(filteredTransaction.map((i) => [i.ticker, i.exchange]));
+  const array = Array.from(map, ([name, value]) => name + "." + value);
+
+  // https://eodhistoricaldata.com/api/real-time/AAPL.US?api_token=demo&fmt=json&s=VTI,EUR.FOREX
+  // 63846ed0c02bb2.60812969
+
+  try {
+    const response = await axios.get(
+      `https://eodhistoricaldata.com/api/real-time/AAPL.US?api_token=${
+        process.env.API_TOKEN
+      }fmt=json&s=${array.join(",")}`,
+      {
+        headers: {
+          "accept-encoding": "null",
+        },
+      }
+    );
+    if (response.data.constructor === Array) {
+      filteredTransaction.map((el) => {
+        response.data.map((res) => {
+          if (el.ticker + "." + el.exchange === res.code) {
+            el.closePrice = res.close;
+            el.dayChange = res.change_p;
+            return;
+          }
+        });
+      });
+    } else {
+      filteredTransaction.map((el) => {
+        if (el.ticker + "." + el.exchange === response.data.code) {
+          el.closePrice = response.data.close;
+          el.dayChange = response.data.change_p;
+          return;
+        }
+      });
+    }
+  } catch (error) {
+    console.log(error);
   }
 
   res.status(200).json({
@@ -47,12 +88,14 @@ const createTransaction = async (req, res, next) => {
     );
   }
 
-  const { creator, date, name, ticker, price, numberOfStocks } = req.body;
+  const { creator, date, name, ticker, exchange, price, numberOfStocks } =
+    req.body;
   const createdTransaction = new Transaction({
     creator,
     date,
     name,
     ticker,
+    exchange,
     price,
     numberOfStocks,
   });
